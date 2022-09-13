@@ -103,7 +103,6 @@ const RegistationForm: FC<{}> = () => {
                                     }
                                 />
                                 <MaterialButtonCustom
-                                    value={values}
                                     variant="outlined"
                                     color='secondary'
                                     children={<p>Register</p>}

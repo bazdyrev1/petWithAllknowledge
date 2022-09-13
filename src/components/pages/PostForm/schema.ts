@@ -9,7 +9,7 @@ const message = {
     content: {
         required: "Article cannot be empty",
         min: "Article cannot be less than 10 letters",
-        max: "Article can't be longer 300 letters", 
+        max: "Article can't be longer 1500 letters", 
     },
     type: {
         required: "Choose the type of news",
@@ -25,7 +25,7 @@ export const validateSchema = yup.object().shape({
     content: yup.string()
     .required(message.content.required)
     .min(10, message.content.min)
-    .max(600, message.content.max),
+    .max(1500, message.content.max),
     type: yup.string()
     .required(message.type.required),
    

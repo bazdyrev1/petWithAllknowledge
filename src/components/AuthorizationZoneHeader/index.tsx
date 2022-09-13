@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { authUser } from "../../store/reducers/signInReducer";
 import { getAllUsers } from "../../store/reducers/usersReducer";
 import BackgroundLetterAvatars from "../BackgroundLetterAvatars";
-import ButtonMaterial from "../ButtonMaterial";
+import { Button } from "@mui/material";
 import { ButtonBlock, NameUser, UserBlock } from "./style";
 
 const AuthorizationZoneHeader = ({ auth: { isAdmin, isAuth, login } }: any) => {
@@ -22,7 +22,7 @@ const AuthorizationZoneHeader = ({ auth: { isAdmin, isAuth, login } }: any) => {
     const dispatch = useDispatch();
     const authUserData = listUsers.find(user => user.mail === login);
     const { pathname } = useLocation();
-    console.log(pathname)
+    // console.log(pathname)
     if (isAuth) {
         return (
             <UserBlock>
@@ -70,12 +70,12 @@ const AuthorizationZoneHeader = ({ auth: { isAdmin, isAuth, login } }: any) => {
                 {(pathname === '/signin' ?
                     <></>
                     :
-                    <ButtonMaterial
+                    <Button
                         variant="outlined"
                         children="Log in"
                         color='secondary'
                         size='small'
-                        elementType={{ color: 'blue' }}
+                        // elementType={{ color: 'blue' }}
                         onClick={() => {
                             history('/signin')
                         }}
@@ -84,7 +84,7 @@ const AuthorizationZoneHeader = ({ auth: { isAdmin, isAuth, login } }: any) => {
                 {(pathname === '/registration-form' ?
                     <></>
                     :
-                    <ButtonMaterial
+                    <Button
                     variant="contained"
                     children="Sing up"
                     color='secondary'

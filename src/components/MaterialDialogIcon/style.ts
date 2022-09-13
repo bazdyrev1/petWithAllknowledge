@@ -1,25 +1,25 @@
-import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
+import { Box } from "@mui/material";
 
 export const Wrapper = styled.div`
+  width: 15vh;
+  height: 8vh;
+  overflow: hidden;
+  margin: 0 auto;
+`;
 
-`
-export const ImageBlock = styled.div`
-position: absolute;
-top: 25%;
-left: 25%;
-min-width: 600px;
-max-width: 1200px;
-min-height: 400px;
-max-height: 1200px;
-overflow: hidden;
-transform: "translate(-50%, -50%)";
-  justify-content: center;
-  border: "2px solid #000",
-& img {
-    bac
+export const CustomBox = styled(Box)`
+  transform: "translate(-50%, -50%)";
+  min-width: 300px;
+  width: auto;
+  min-height: 240px;
+  height: auto;
+  overflow: hidden;
+  img {
     object-fit: cover;
-    min-width: 600px;
-    min-height: 400px;
-}
-`
+    min-width: 360px;
+    max-width: 70vw;
+    min-height: 320px;
+    max-height: 800px;
+  }
+`;

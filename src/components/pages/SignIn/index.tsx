@@ -30,7 +30,7 @@ const SignIn: any = (): JSX.Element => {
         if (!!userList.length) {
 
             const finedUser = userList.find((item) => item.mail === login)
-            console.log(finedUser)
+            // console.log(finedUser)
             if (finedUser && finedUser.mail === login && finedUser.password === password) {
                 dispatch(authUser({ isAdmin: false, isAuth: true, login }))
                 history('/')

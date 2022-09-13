@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ImageUploading, { ImageListType } from "react-images-uploading";
-import ButtonMaterial from '../ButtonMaterial';
+import { Button } from "@mui/material";
 import { ControlButtons, Image, ImageItem, ImageItemButtonsWrapper, UploadImageBlock, Wrapper, Error } from './style';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
@@ -38,43 +38,43 @@ const ImageDonwload = ({ maxFiles, imageDefault, getFiles, error, textError }) =
         }) => (
           <UploadImageBlock>
             <ControlButtons>
-              <ButtonMaterial
+              <Button
                 variant="outlined"
                 color={isDragging ? 'success' : 'secondary'}
                 onClick={onImageUpload}
                 {...dragProps}
               >
                 Click or Drop here
-              </ButtonMaterial>
+              </Button>
               &nbsp;
-              <ButtonMaterial
+              <Button
                 variant="outlined"
                 color='secondary'
                 onClick={onImageRemoveAll}
                 startIcon={<DeleteIcon />}
               >
                 Remove all images
-              </ButtonMaterial>
+              </Button>
             </ControlButtons>
             {imageList.map((image, index) => (
               <ImageItem key={index}>
                 <Image src={image.dataURL} alt="" />
                 <ImageItemButtonsWrapper>
-                  <ButtonMaterial
+                  <Button
                     onClick={() => onImageUpdate(index)}
                     variant="outlined"
                     color='secondary'
                   >
                     Update
-                  </ButtonMaterial>
-                  <ButtonMaterial
+                  </Button>
+                  <Button
                     onClick={() => onImageRemove(index)}
                     variant="outlined"
                     color='secondary'
                     startIcon={<DeleteIcon />}
                   >
                     Remove
-                  </ButtonMaterial>
+                  </Button>
                 </ImageItemButtonsWrapper>
               </ImageItem>
             ))}

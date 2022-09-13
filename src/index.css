@@ -1,13 +1,19 @@
 body{
-    width: 100%;
+    width: 95%;
     height:auto;
-    min-height: 70vw;
+ 
     display: flex;
     
     justify-content: center;
+    
 }
 #root{
     width: 100%;
     height:auto;
     padding: 0 10vw;
-}   
+}  
+.MuiModal-root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 

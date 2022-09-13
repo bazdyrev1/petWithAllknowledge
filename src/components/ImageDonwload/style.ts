@@ -32,11 +32,11 @@ export const ImageItem = styled.div`
   height: auto;
   display: flex;
   padding: 1vh;
-  background: #d3c5ea21;
+  background: #ababab1c;
   border-radius: 10px;
   margin: 1vh;
 
-  background: aliceblue;
+  
   border-radius: 10px;
 `;
 export const Image = styled.img`
@@ -48,10 +48,11 @@ export const Image = styled.img`
 export const ImageItemButtonsWrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   button {
+    width: 11vh;
     margin: 0 5px;
   }
 `;

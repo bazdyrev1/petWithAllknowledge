@@ -29,7 +29,7 @@ const newsSlice = createSlice({
                 {
                 ...action.payload,
                 postId: uuidv4(),
-                date: new Date().toLocaleTimeString()
+                date: new Date().toLocaleDateString()
                 }
             ];
         },

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import TextField from "../../TextField";
-import ButtonMaterial from "../../ButtonMaterial";
+import { Button } from "@mui/material";
 
 export const Wrapper = styled.article`
 width: 100%;
-min-height: 95vh;
+
 display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -15,7 +15,7 @@ display: flex;
 export const FormWrapper = styled.div`
 display: flex;
 width: 40vh;
-height: 50vh;
+height: auto;
 flex-direction: column;
 justify-content: space-evenly;
 align-items: stretch;
@@ -65,40 +65,51 @@ form{
   align-items: center;
 }
 }
-`
+`;
 export const Title = styled.h3`
-font-size: 1.5em;
-background: linear-gradient(to right,#f38cff,#e76df6 50%,#eee 75%,#5668ed 75%);background-size: 200% auto;
-color: #000;
-background-clip: text;
-animation: animate 5s linear infinite;
-text-fill-color: transparent;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-@keyframes animate {
-  to {
+  font-size: 1.5em;
+  background: linear-gradient(
+    to right,
+    #f38cff,
+    #e76df6 50%,
+    #eee 75%,
+    #5668ed 75%
+  );
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  animation: animate 5s linear infinite;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @keyframes animate {
+    to {
       background-position: 200% center;
+    }
   }
-}
-`
+`;
 export const TextFieldCustom = styled(TextField)`
-width:90%;
-height: 8vh;
-	.MuiOutlinedInput-root{
-    width: 100%;
+  width: 90%;
+  min-height: 8vh;
+  height: auto;
 
-}
-`
-export const MaterialButtonCustom = styled(ButtonMaterial)`
-width:45%;
-height: 4vh;
-border: none;
-p{
-  // margin: 0.5em 0.5em;
-  font-size: 1em;
-  font-family: 'Josefin Sans',sans-serif;
-}
-`
+  .MuiOutlinedInput-root {
+    width: 100%;
+  }
+  .MuiFormControl-root {
+    margin: 0 1vh;
+  }
+`;
+export const MaterialButtonCustom = styled(Button)`
+  width: 48%;
+  min-height: 4vh;
+  max-height: 6vh;
+  border: none;
+  p {
+    font-size: 1em;
+    font-family: "Josefin Sans", sans-serif;
+  }
+`;
 
 export const ButtonsWrapper = styled.div`
   width: 90%;
@@ -106,11 +117,9 @@ export const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  
 `;
 export const ErrorsMessage = styled.span`
-  
   color: red;
-    font-size: 1.2em;
-    margin: 0% 3%;
+  font-size: 1.2em;
+  margin: 0% 3%;
 `;

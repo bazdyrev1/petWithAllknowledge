@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextField from '../../TextField';
-import ButtonMaterial from '../../ButtonMaterial'
+import { Button } from "@mui/material";
 
 
 export const Wrapper = styled.article`
 width: 100%;
-min-height: 95vh;
+min-height: 90vh;
 display: flex;
     justify-content: center;
     align-items: flex-start;
     font-family: 'Josefin Sans',sans-serif;
-}
+
  `
 
  export const FormWrapper = styled.div`
@@ -103,7 +103,8 @@ margin: 0 auto;
  }
 
  `
- export const ButtonMaterialCustom = styled(ButtonMaterial)`
+ export const ButtonMaterialCustom = styled(Button)`
+ height: 4vh;
 p{
     margin: 0.5em 0.5em;
     font-size: 1em;

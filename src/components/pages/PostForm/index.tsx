@@ -6,7 +6,7 @@ import { defaultOptionsCategory } from "../../../store/reducers/defaulValuesStor
 import { addNewness, editNewness, getAllPosts, IAllPosts } from "../../../store/reducers/postsReducer";
 import { isAuth } from "../../../store/reducers/signInReducer";
 import { getAllUsers } from "../../../store/reducers/usersReducer";
-import ButtonMaterial from "../../ButtonMaterial";
+import { Button } from "@mui/material";
 import ImageDonwload from "../../ImageDonwload";
 import MaterialSelect from "../../MaterialSelect/inde";
 import TextField from "../../TextField";
@@ -38,7 +38,7 @@ export const PostForm: FC = () => {
     const listUsers = useSelector(getAllUsers);
     const allPosts = useSelector(getAllPosts);
     const openPost = allPosts.find(element => element.postId === id);
-    console.log(action)
+    // console.log(action)
     const getAuthor = () => {
         if(action === 'edit'){
             if(auth.isAdmin){
@@ -84,7 +84,7 @@ export const PostForm: FC = () => {
                     validationSchema={validateSchema}
                     validateOnMount
                 >
-                    {({ values, errors, touched, dirty, setFieldValue, setFieldTouched, handleChange, handleBlur }) => {
+                    {({ values, errors, touched, setFieldValue, setFieldTouched, handleBlur }) => {
                         const resetForm = () => {
                             values = initialValues;
                             setMainImage([]);
@@ -154,7 +154,7 @@ export const PostForm: FC = () => {
                                     multiline
                                     resize
                                     error={errors?.content && touched?.content}
-                                    rows={16}
+                                    
                                     helperText={errors?.content && touched?.content && (
                                         errors?.content
                                     )}
@@ -174,7 +174,7 @@ export const PostForm: FC = () => {
                                 />
                                 <ButtonsWrapper>
                                     {(id ?
-                                        <ButtonMaterial
+                                        <Button
                                             variant="outlined"
                                             color="secondary"
                                             children='Cancel'
@@ -183,7 +183,7 @@ export const PostForm: FC = () => {
                                                 history(`/post/${values.type}/${values.postId}`)
                                             }}
                                         /> :
-                                        <ButtonMaterial
+                                        <Button
                                             variant="outlined"
                                             color="secondary"
                                             children='Cancel'
@@ -195,7 +195,7 @@ export const PostForm: FC = () => {
                                     )}
 
                                     {(
-                                        (id) ? <ButtonMaterial
+                                        (id) ? <Button
                                             children={'Edit'}
                                             variant="outlined"
                                             color="secondary"
@@ -206,7 +206,7 @@ export const PostForm: FC = () => {
                                             }}
                                             disabled={Boolean(Object.keys(errors).length)}
                                         /> :
-                                            <ButtonMaterial
+                                            <Button
                                                 children={'Create'}
                                                 variant="outlined"
                                                 color="secondary"

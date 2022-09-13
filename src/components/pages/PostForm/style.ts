@@ -4,7 +4,6 @@ import TextField from "../../TextField";
 
 export const Wrapper = styled.article`
   width: 100%;
-  min-height: 95vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,33 +91,41 @@ export const Title = styled.h3`
 export const TitlePost = styled(TextField)`
   width: 100%;
   margin: 0 auto;
-  height: 8vh;
+  min-height: 8vh;
+  height: auto;
 `;
 export const ArticlePost = styled(TextField)`
-min-width:30%;
-width: 48vh;
-height: 38vh;
+  min-width: 30%;
+  width: 48vh;
+  height: 38vh;
 
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-div{
-    height:100%;
-}
-textarea{
+  div {
     height: 100%;
-}
+    textarea {
+      height: 100% !important;
+    }
+  }
 `;
 export const WrapperTitleAndMainImage = styled.div`
-width: 40vh;
-margin-right: 2vh;
-display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  width: 40vh;
+  margin-right: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const ErrorsMessage = styled.p`
   margin: 0;
 `;
-export const ButtonsWrapper = styled.div``;
+export const ButtonsWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  button {
+    margin: 0 5px;
+  }
+`;

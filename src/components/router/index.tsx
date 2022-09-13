@@ -6,7 +6,6 @@ import RegistationForm  from "../pages/RegistrationForm";
 import  PostPage  from "../pages/PostPage";
 import SignIn from "../pages/SignIn";
 import { Header } from "../layout/Header";
-import { Footer } from "../layout/Footer";
 import { useSelector } from "react-redux";
 import { isAuth } from "../../store/reducers/signInReducer";
  
@@ -14,7 +13,7 @@ import { isAuth } from "../../store/reducers/signInReducer";
 
 export const PublicRoutes: FC<any> = () => {
     const auth = useSelector(isAuth);
-    console.log(auth)
+    // console.log(auth)
     return(
         <>
         <BrowserRouter>
@@ -34,7 +33,6 @@ export const PublicRoutes: FC<any> = () => {
             <Route path="/post/:type/:id" element={<PostPage />} />
             <Route path='*' element={<Home />} />
         </Routes> 
-        <Footer />
         </BrowserRouter>
         </>
     )
