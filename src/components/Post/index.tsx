@@ -34,6 +34,7 @@ const Post: FC<IPost> = ({ postItem }): JSX.Element => {
         return false
     }
 
+    const mainImage = postItem.mainImage[0]?.dataURL
     const link = `/post/${postItem.type}/${postItem.postId}`
     const permissionForEdit = checkPermissionForEdit(auth,postItem);
 
@@ -44,7 +45,7 @@ const Post: FC<IPost> = ({ postItem }): JSX.Element => {
         >
             <Link to={link}>
                 <MainImageBox>
-                    <MainImagePreview src={postItem.mainImage[0]?.dataURL} />
+                    <MainImagePreview src={mainImage} />
                 </MainImageBox>
             </Link>
             <ShortInfoPost>

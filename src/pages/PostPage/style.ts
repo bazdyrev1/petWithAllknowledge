@@ -31,8 +31,8 @@ export const AuthorBlock = styled.div`
 `;
 
 export const ArticleTitle = styled.h1`
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   width: auto;
   font-size: 2.4em;
   margin-top: 3vh;
@@ -44,9 +44,9 @@ export const Article = styled.p`
   text-indent: 3vh;
   width: 90%;
   height: auto;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.4em;
-  font-weight: 100;
+  font-weight: 300;
   margin: 3vw auto;
   line-height: 1.4;
 `;

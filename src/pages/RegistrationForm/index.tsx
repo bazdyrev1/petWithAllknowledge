@@ -96,7 +96,7 @@ const RegistrationForm: FC = (): JSX.Element => {
                                     <MaterialButtonCustom
                                         variant="outlined"
                                         color='secondary'
-                                        children={<p>Return home</p>}
+                                        children={<p>Home</p>}
                                         startIcon={<ArrowBackIosIcon />}
                                         onClick={() =>
                                             navigate('/')

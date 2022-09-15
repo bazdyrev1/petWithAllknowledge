@@ -7,7 +7,7 @@ export const Wrapper = styled.article`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
 `;
 
 export const FormWrapper = styled.div`
@@ -17,12 +17,12 @@ export const FormWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: stretch;
-  margin-top: 15%;
+  margin-top: 10%;
   padding: 5%;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
   
   ::before {
     content: "";
@@ -111,12 +111,13 @@ export const TextFieldCustom = styled(TextField)`
 
 export const MaterialButtonCustom = styled(Button)`
   width: 48%;
-  min-height: 4vh;
+  min-height: 5vh;
   max-height: 6vh;
   border: none;
   p {
+    margin: 0;
     font-size: 1em;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 

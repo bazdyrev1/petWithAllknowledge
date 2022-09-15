@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   height: 30%;
   margin: 15px 5px;
   padding: 3px 0px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
   
   :hover {
     background: #e3c8f21c;

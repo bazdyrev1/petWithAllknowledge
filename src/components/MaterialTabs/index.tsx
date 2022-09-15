@@ -57,12 +57,12 @@ const MaterialTabs: FC = (): JSX.Element => {
                 </Tabs>
 
                 <TabPanel value={value} index={0} >
-                    <PostGroup categoryName={'all'} page={page} func={setNumberOfPages} />
+                    <PostGroup categoryName={'all'} page={page} functionGetPageNum={setNumberOfPages} />
                 </TabPanel>
 
                 {postsCategories.map((item, index) => (
                     <TabPanel key={index} value={value} index={index + 1} >
-                        <PostGroup categoryName={item} page={page} func={setNumberOfPages} />
+                        <PostGroup categoryName={item} page={page} functionGetPageNum={setNumberOfPages} />
                     </TabPanel >
                 ))}
             </Box>

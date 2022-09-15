@@ -8,34 +8,30 @@ import { IPostGroup } from "./types";
 
 
 
-const PostGroup: FC<IPostGroup> = (props: any) => {
+const PostGroup: FC<IPostGroup> = ({ categoryName, page, functionGetPageNum }) => {
 
     const allPosts = useSelector(getAllPosts);
     
-    function paginate(array, page_size, page_number) {
+    const  paginate = (array, page_size, page_number) => {
         return array.slice((page_number - 1) * page_size, page_number * page_size);
     }
 
     const postsWithSelectCategory = allPosts.reduce((acc, curr) => {
-        if (curr.type === props.categoryName) {
+        if (curr.type === categoryName) {
             return [...acc, curr];
         }
-        else if (props.categoryName === "all") {
+        else if (categoryName === "all") {
             return [...acc, curr]
         }
-        else {
             return [...acc];
-        }
     }, [])
     
     const postWithPagination = () => {
-       
-        // props.func(Math.ceil(postsWithSelectCategory.length / 9))
-        return paginate(postsWithSelectCategory, 9, props.page);
+        return paginate(postsWithSelectCategory, 9, page);
     }
     useEffect(() => {
-        props.func(Math.ceil(postsWithSelectCategory.length / 9))
-    },[])
+        functionGetPageNum(Math.ceil(postsWithSelectCategory.length / 9))
+    },[functionGetPageNum,postsWithSelectCategory ])
 
     return (
         <Wrapper>

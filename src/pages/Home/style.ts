@@ -18,19 +18,20 @@ export const AboutBlogBox = styled.section`
   justify-content: center;
   align-items: flex-start;
   padding-left: 5vh;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
+
 `;
 
 export const NameBlog = styled.h1`
   font-size: 2.2em;
   margin: 10px 0px 10px 15px;
-  font-weight: 100;
+  font-weight: 400;
 `;
 
 export const MainIdea = styled.p`
   margin: 10px 0px 10px 15px;
   font-size: 1.3em;
-  font-weight: 100;
+  font-weight: 300;
 `;
 
 export const ContentBox = styled.article`
@@ -39,7 +40,9 @@ export const ContentBox = styled.article`
   justify-content: space-between;
   width: 100%;
   min-height: 100ch;
-
+  .MuiBox-root{
+    background-color: #ffffff00;
+  }
   .MuiTabs-root {
     width: 15vw;
   }
@@ -49,7 +52,7 @@ export const ContentBox = styled.article`
   }
 
   .MuiButtonBase-root {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
   }
 
@@ -63,10 +66,13 @@ export const ContentBox = styled.article`
 
   .MuiTabs-flexContainer {
     button {
-      font-family: "Josefin Sans", sans-serif;
+      font-family: 'Roboto', sans-serif;
       color: #b793eb;
-      margin: 5px 0;
+      margin: 10px 0;
       box-shadow: 0px 0px 1px;
+      font-size: 1.2em;
+      font-weight: 400;
     }
+    
   }
 `;

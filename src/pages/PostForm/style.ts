@@ -6,7 +6,7 @@ export const Wrapper = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
 `;
@@ -20,7 +20,7 @@ export const FormWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
   
   ::before {
     content: "";

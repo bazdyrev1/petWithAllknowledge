@@ -5,8 +5,9 @@ body{
     display: flex;
     
     justify-content: center;
-    
+    background: linear-gradient(90deg, #eee0f01a, #efefef36);
 }
+
 #root{
     width: 100%;
     height:auto;
