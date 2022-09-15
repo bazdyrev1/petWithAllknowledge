@@ -1,17 +1,17 @@
 import React, { FC } from "react";
 import MaterialTabs from "../../components/MaterialTabs";
-import { MainIdea, NameBlog, Wrapper, AboutBlogBox, ContentBox } from "./style";
+import { MainIdea, NameBlog, Wrapper, AboutBlogBox, ContentBox, ColorWords } from "./style";
 
 const Home: FC = (): JSX.Element => {
     return (
         <Wrapper>
             <AboutBlogBox>
                 <NameBlog>
-                    Techno news for everyone!
+                    Techno news for <ColorWords>everyone</ColorWords>!
                 </NameBlog>
 
                 <MainIdea>
-                    Tell us how you see it. Here you are the main observer!
+                    Tell us how <ColorWords>you</ColorWords>see it. Here you are the  <ColorWords>main</ColorWords> observer!
                 </MainIdea>
             </AboutBlogBox>
 

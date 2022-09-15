@@ -4,7 +4,7 @@ export const UserBlock = styled.div`
   width: auto;
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 3%;
 `;
 
 export const NameUser = styled.p`
@@ -14,7 +14,7 @@ export const NameUser = styled.p`
 `;
 
 export const ButtonBlock = styled.div`
-  margin-right: 10px;
+  margin-right: 3%;
   display: flex;
   align-items: center;
   flex-direction: row;

@@ -31,7 +31,7 @@ export const NameBlog = styled.h1`
 export const MainIdea = styled.p`
   margin: 10px 0px 10px 15px;
   font-size: 1.3em;
-  font-weight: 300;
+  font-weight: 400;
 `;
 
 export const ContentBox = styled.article`
@@ -76,3 +76,7 @@ export const ContentBox = styled.article`
     
   }
 `;
+
+export const ColorWords = styled.span`
+  color: #a838c3;
+`
