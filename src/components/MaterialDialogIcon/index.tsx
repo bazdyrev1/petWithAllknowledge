@@ -1,14 +1,15 @@
-import React from "react";
+import React, { FC, useState } from "react";
+import { IMaterialDialogIcon } from "./types";
 import { ImageListItem, Modal } from "@mui/material";
 import { CustomBox, Wrapper } from "./style";
 
 
+const MaterialDialogIcon: FC<IMaterialDialogIcon> = ({ item }): JSX.Element => {
+  const [open, setOpen] = useState({ opened: false, img: "" });
 
-const MaterialDialogIcon = ({ item }) => {
-
-  const [open, setOpen] = React.useState({ opened: false, img: "" });
-  const handleOpen = (src) => setOpen({ opened: true, img: src });
+  const handleOpen = (src: string) => setOpen({ opened: true, img: src });
   const handleClose = () => setOpen({ opened: false, img: "" });
+
   return (
     <Wrapper>
       <ImageListItem>
@@ -17,7 +18,7 @@ const MaterialDialogIcon = ({ item }) => {
           srcSet={item}
           alt='Additional pictures'
           loading="lazy"
-          onClick={(e) => handleOpen(item)}
+          onClick={() => handleOpen(item)}
         />
       </ImageListItem>
 
@@ -30,8 +31,6 @@ const MaterialDialogIcon = ({ item }) => {
        <CustomBox>
           <img src={open.img} alt="asd" />
        </CustomBox>
-
-
       </Modal>
     </Wrapper>
   );

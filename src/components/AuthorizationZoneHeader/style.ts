@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export const UserBlock = styled.div`
@@ -20,11 +19,12 @@ export const ButtonBlock = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  & button {
+   button {
     margin: 0px 5px;
     width: 100px;
   }
 `;
+
 export const AuthBlock = styled.div`
   width: 18vw;
   margin-right: 10px;

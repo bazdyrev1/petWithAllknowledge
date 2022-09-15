@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
+import { IInputPassword, IStateVisible } from "./types";
 import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { ErrorsMessage, InputsPassWrapper } from "./style";
 
-interface IStateVisible {
-    password: boolean,
-}
-
-const InputPassword = ({ form: { errors, touched, values, setFieldValue, handleBlur, setFieldTouched }, field: { name } }) => {
+const InputPassword: FC<IInputPassword>= ({ form: { errors, touched, values, setFieldValue, handleBlur, setFieldTouched }, field: { name } }): JSX.Element => {
     
-    const item= name;
     const [visible, setVisible] = useState<IStateVisible>({
         password: false,
     });
@@ -29,14 +25,14 @@ const InputPassword = ({ form: { errors, touched, values, setFieldValue, handleB
             <FormControl>
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
-                    error={Boolean(errors[item]) && touched[item]}
+                    error={Boolean(errors[name]) && touched[name]}
                     id="outlined-adornment-password"
-                    name={item}
+                    name={name}
                     type={visible.password ? 'text' : 'password'}
-                    value={values[item]}
+                    value={values[name]}
                     onBlur={handleBlur}
-                    onChange={(e: any) => setFieldValue(item, e.target.value)}
-                    onClick={()=> setFieldTouched(item, true)}
+                    onChange={(e: any) => setFieldValue(name, e.target.value)}
+                    onClick={()=> setFieldTouched(name, true)}
                     endAdornment={
                         <InputAdornment position="end">
                             <IconButton
@@ -51,8 +47,8 @@ const InputPassword = ({ form: { errors, touched, values, setFieldValue, handleB
                     }
                     label={name}
                 />
-                {errors[item] && touched[item] && (
-                    <ErrorsMessage>{errors[item]}</ErrorsMessage>
+                {errors[name] && touched[name] && (
+                    <ErrorsMessage>{errors[name]}</ErrorsMessage>
                 )}
 
             </FormControl>

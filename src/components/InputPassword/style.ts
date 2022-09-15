@@ -8,11 +8,12 @@ export const InputsPassWrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    
     .MuiFormControl-root{
         width: 100%
     }
-   
 `
+
 export const ErrorsMessage = styled.span`
     color: red;
     font-size: 1em;

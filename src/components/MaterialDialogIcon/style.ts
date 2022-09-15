@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   height: 8vh;
   overflow: hidden;
   margin: 0 auto;
+
+  img{
+    width: 15vh
+  }
 `;
 
 export const CustomBox = styled(Box)`
@@ -15,6 +19,7 @@ export const CustomBox = styled(Box)`
   min-height: 240px;
   height: auto;
   overflow: hidden;
+  
   img {
     object-fit: cover;
     min-width: 360px;

@@ -1,55 +1,29 @@
-import React, { useState } from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import { getAllPosts, getCategoryOptions } from "../../store/reducers/postsReducer";
+import React, { FC, useState } from "react";
+import { getCategoryOptions } from "../../store/reducers/postsReducer";
 import { useSelector } from "react-redux";
 import PostGroup from "../PostGroup";
+import TabPanel from "./TabPanel";
 import PaginationMaterial from "../PaginationMaterial";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
 import { Wrapper } from "./style";
 
-
-interface TabPanelProps {
-    children?: React.ReactNode;
-    index: number;
-    value: number;
-}
-
-function a11yProps(index: number) {
+const a11yProps = (index: number) => {
     return {
         id: `vertical-tab-${index}`,
         "aria-controls": `vertical-tabpanel-${index}`
     };
 }
 
-function TabPanel(props: TabPanelProps) {
-    const { children, value, index, ...other } = props;
+const MaterialTabs: FC = (): JSX.Element => {
+    const [page, setPage] = useState(1);
+    const [value, setValue] = useState(0);
+    const [numberOfPages, setNumberOfPages] = useState(1);
 
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{ p: 3 }}>
-                    <Typography component={'div'} >{children}</Typography>
-                </Box>
-            )}
-        </div>
-    );
-    ;
-}
-const MaterialTabs = () => {
- 
     const postsCategories = useSelector(getCategoryOptions);
-    const [page, setPage] = useState(1)
-    const [value, setValue] = React.useState(0);
-    const [numberOfPages, setNumberOfPages] = useState(1)
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+
+    const handleChange = (_, newValue: number) => {
         setValue(newValue);
         setPage(1);
     };
@@ -69,44 +43,40 @@ const MaterialTabs = () => {
                     value={value}
                     onChange={handleChange}
                     aria-label="Vertical tabs example"
-                    
                     sx={{ borderRight: 1, borderColor: "divider" }}
                 >
-                    <Tab 
-                    label='All posts' 
-                    key='AllPosts' 
-                    
-                    {...a11yProps(0)} 
+                    <Tab
+                        label='All posts'
+                        key='AllPosts'
+                        {...a11yProps(0)}
                     />
 
                     {postsCategories.map((item, index) => (
                         <Tab key={index} label={item} {...a11yProps(index + 1)} />
                     ))}
                 </Tabs>
+
                 <TabPanel value={value} index={0} >
-                    <PostGroup categoryName={'all'} page={page} func={setNumberOfPages}/>
-
+                    <PostGroup categoryName={'all'} page={page} func={setNumberOfPages} />
                 </TabPanel>
-                {postsCategories.map((item, index) => (
 
+                {postsCategories.map((item, index) => (
                     <TabPanel key={index} value={value} index={index + 1} >
                         <PostGroup categoryName={item} page={page} func={setNumberOfPages} />
-
                     </TabPanel >
                 ))}
-
             </Box>
-            <PaginationMaterial count={numberOfPages} 
-            variant="outlined"
-            color="secondary"
-            page={page}
-            onChange={(_, num) => {
-                setPage(num);
-            }}
-            size='large'
+            
+            <PaginationMaterial count={numberOfPages}
+                variant="outlined"
+                color="secondary"
+                page={page}
+                onChange={(_, num) => {
+                    setPage(num);
+                }}
+                size='large'
             />
         </Wrapper>
-
     )
 };
 

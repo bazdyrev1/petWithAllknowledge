@@ -1,17 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from "../index";
 import { v4 as uuidv4 } from "uuid";
-
-
-
-interface IUsers{
-    nickName: string,
-    authorName: string,
-    mail: string,
-    password: string,
-    role: string,
-    authorId: string,
-}
+import { IUsers } from './types';
 
 export const usersSlice = createSlice({
     name: 'users',
@@ -30,7 +20,6 @@ export const usersSlice = createSlice({
         }
     }
 })
-
 
 export const { addUser} = usersSlice.actions;
 
