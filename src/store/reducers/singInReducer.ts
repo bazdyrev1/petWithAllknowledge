@@ -13,6 +13,7 @@ export const singInSlice = createSlice({
   initialState: initialState as ISingIn,
   reducers: {
     authUser(state, action) {
+			
       return {
         ...state,
         ...action.payload,

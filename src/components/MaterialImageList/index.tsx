@@ -1,7 +1,7 @@
 import React, { FC } from "react";
+import ImageList from "@mui/material/ImageList";
 import MaterialDialogIcon from "../MaterialDialogIcon";
 import { IMaterialImageList } from "./types";
-import ImageList from "@mui/material/ImageList";
 
 const MaterialImageList: FC<IMaterialImageList> = ({ listImage, cols, rowHeight }): JSX.Element => {
 
@@ -11,6 +11,7 @@ const MaterialImageList: FC<IMaterialImageList> = ({ listImage, cols, rowHeight 
       rowHeight={rowHeight}
     >
       {listImage.map((item, index) => {
+        
         return (
           <MaterialDialogIcon item={item.dataURL} key={index} />
         )

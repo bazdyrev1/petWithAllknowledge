@@ -1,8 +1,7 @@
 import React, { FC, useState } from "react";
-import { IMaterialDialogIcon } from "./types";
 import { ImageListItem, Modal } from "@mui/material";
+import { IMaterialDialogIcon } from "./types";
 import { CustomBox, Wrapper } from "./style";
-
 
 const MaterialDialogIcon: FC<IMaterialDialogIcon> = ({ item }): JSX.Element => {
   const [open, setOpen] = useState({ opened: false, img: "" });

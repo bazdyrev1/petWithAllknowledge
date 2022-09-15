@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   height: 8vh;
   overflow: hidden;
   margin: 0 auto;
+  cursor: pointer;
 
   img{
     width: 15vh

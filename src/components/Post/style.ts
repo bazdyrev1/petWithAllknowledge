@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   height: 30%;
   margin: 15px 5px;
   padding: 3px 0px;
-  font-family: 'Roboto', sans-serif;
   
   :hover {
     background: #e3c8f21c;
@@ -58,6 +57,7 @@ export const ArticleWrapper = styled.div`
   height: auto;
   padding: 0px 15px;
   height: 13vh;
+	margin-bottom: 20px;
 `;
 
 export const ArticlePreview = styled.p`
@@ -72,8 +72,8 @@ export const ArticlePreview = styled.p`
 `;
 
 export const InformationAboutAuthor = styled.div`
-  width: 91%;
-  padding: 0 15px;
+  width: 100%;
+  padding: 0 15px 0 25px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -84,10 +84,16 @@ export const InformationAboutAuthor = styled.div`
 export const AuthorNameAndData = styled.div``;
 
 export const InfoParagraph = styled.p`
-  margin: 1px 10px;
+  margin: 1px 5px;
   font-weight: 500;
 `;
 
 export const ControlButtons = styled.div`
   color: #9c27b0;
+
+  button{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+  }
 `;

@@ -8,7 +8,6 @@ export const Wrapper = styled.article`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-family: 'Roboto', sans-serif;
 `;
 
 export const FormWrapper = styled.div`
@@ -23,7 +22,6 @@ export const FormWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  font-family: 'Roboto', sans-serif;
   
   ::before {
     content: "";
@@ -114,7 +112,6 @@ export const NavigateForward = styled.div`
 export const TextFieldCustom = styled(TextField)`
   input {
     font-size: 1.3em;
-    font-family: 'Roboto', sans-serif;
   }
 `;
 
@@ -124,6 +121,5 @@ export const ButtonMaterialCustom = styled(Button)`
   p {
     margin: 0.5em 0.5em;
     font-size: 1em;
-    font-family: 'Roboto', sans-serif;
   }
 `;

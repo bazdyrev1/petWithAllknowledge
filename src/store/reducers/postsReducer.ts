@@ -9,6 +9,7 @@ const newsSlice = createSlice({
   initialState: allPosts as IAllPosts[],
   reducers: {
     addNewness(state, action) {
+
       return [
         ...state,
         {
@@ -19,14 +20,17 @@ const newsSlice = createSlice({
       ];
     },
     deleteNewness(state, action) {
+
       return [...state.filter((element) => element.postId !== action.payload)];
     },
     editNewness(state, action) {
+
       return [
         ...state.map((element) => {
           if (element.postId === action.payload.postId) {
             return action.payload;
           }
+
           return element;
         }),
       ];
@@ -42,9 +46,9 @@ export const getCategoryOptions = (state: RootState) =>
   state.posts.reduce((container, obj) => {
     if (container.includes(obj.type)) {
       return [...container];
-    } else {
-      return [...container, obj.type];
     }
+
+      return [...container, obj.type];
   }, []);
 
 export const postsReducer = newsSlice.reducer;

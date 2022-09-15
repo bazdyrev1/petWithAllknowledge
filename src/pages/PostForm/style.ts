@@ -6,7 +6,6 @@ export const Wrapper = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
 `;
@@ -20,7 +19,6 @@ export const FormWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  font-family: 'Roboto', sans-serif;
   
   ::before {
     content: "";
@@ -109,7 +107,8 @@ export const ArticlePost = styled(TextField)`
   height: 38vh;
   display: flex;
   flex-direction: column;
-
+  margin-top: 10px !important;
+  
   div {
     height: 100%;
 
@@ -125,6 +124,7 @@ export const WrapperTitleAndMainImage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 `;
 
 export const ErrorsMessage = styled.p`

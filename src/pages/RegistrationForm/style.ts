@@ -7,7 +7,6 @@ export const Wrapper = styled.article`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-family: 'Roboto', sans-serif;
 `;
 
 export const FormWrapper = styled.div`
@@ -22,7 +21,6 @@ export const FormWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  font-family: 'Roboto', sans-serif;
   
   ::before {
     content: "";
@@ -73,6 +71,8 @@ export const FormWrapper = styled.div`
 
 export const Title = styled.h3`
   font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 2vh;
   background: linear-gradient(
     to right,
     #f38cff,
@@ -84,7 +84,7 @@ export const Title = styled.h3`
   color: #000;
   background-clip: text;
   animation: animate 5s linear infinite;
-  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
@@ -99,6 +99,7 @@ export const TextFieldCustom = styled(TextField)`
   width: 90%;
   min-height: 8vh;
   height: auto;
+  margin-bottom: 20px !important;
 
   .MuiOutlinedInput-root {
     width: 100%;
@@ -117,13 +118,11 @@ export const MaterialButtonCustom = styled(Button)`
   p {
     margin: 0;
     font-size: 1em;
-    font-family: 'Roboto', sans-serif;
   }
 `;
 
 export const ButtonsWrapper = styled.div`
   width: 90%;
-  height: 8vh;
   display: flex;
   align-items: center;
   justify-content: space-around;

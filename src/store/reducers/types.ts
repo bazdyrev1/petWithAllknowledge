@@ -1,7 +1,6 @@
 export interface IImage {
   dataURL: string;
 }
-
 export interface IAllPosts {
   type: string;
   postId: string;

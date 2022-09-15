@@ -30,7 +30,6 @@ export const ReactLogoIcon = styled(ReactLogo)`
 export const NameBlog = styled.p`
   font-size: 2em;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   margin-left: 15px;
   cursor: default;

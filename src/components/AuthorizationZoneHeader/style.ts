@@ -9,7 +9,6 @@ export const UserBlock = styled.div`
 
 export const NameUser = styled.p`
   margin: 0;
-  font-family: 'Roboto', sans-serif;
   font-size: 1.2em;
 `;
 

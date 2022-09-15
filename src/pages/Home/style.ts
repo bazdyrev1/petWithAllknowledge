@@ -18,8 +18,6 @@ export const AboutBlogBox = styled.section`
   justify-content: center;
   align-items: flex-start;
   padding-left: 5vh;
-  font-family: 'Roboto', sans-serif;
-
 `;
 
 export const NameBlog = styled.h1`
@@ -52,7 +50,6 @@ export const ContentBox = styled.article`
   }
 
   .MuiButtonBase-root {
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
   }
 
@@ -66,11 +63,10 @@ export const ContentBox = styled.article`
 
   .MuiTabs-flexContainer {
     button {
-      font-family: 'Roboto', sans-serif;
       color: #b793eb;
       margin: 10px 0;
       box-shadow: 0px 0px 1px;
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: 400;
     }
     

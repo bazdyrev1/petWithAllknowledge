@@ -1,11 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
 import ImageUploading, { ImageListType } from "react-images-uploading";
-import { IImageDownloading } from './types';
 import { Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { IImageDownloading } from './types';
 import { ControlButtons, Image, ImageItem, ImageItemButtonsWrapper, UploadImageBlock, Wrapper, Error } from './style';
-
 
 const ImageDownloading: FC<IImageDownloading> = ({ maxFiles, imageDefault, getFiles, error, textError }): JSX.Element => {
   const [images, setImages] = useState([]);
@@ -57,6 +56,7 @@ const ImageDownloading: FC<IImageDownloading> = ({ maxFiles, imageDefault, getFi
                 Remove all images
               </Button>
             </ControlButtons>
+
             {imageList.map((image, index) => (
               <ImageItem key={index}>
                 <Image src={image.dataURL} alt="" />
@@ -84,6 +84,7 @@ const ImageDownloading: FC<IImageDownloading> = ({ maxFiles, imageDefault, getFi
           </UploadImageBlock>
         )}
       </ImageUploading>
+			
       {(error &&
         <Error>
           <ErrorOutlineIcon />

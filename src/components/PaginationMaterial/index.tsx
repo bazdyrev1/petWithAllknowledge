@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { IPaginationMaterial } from './types';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import { IPaginationMaterial } from './types';
 
 const PaginationMaterial: FC<IPaginationMaterial> = ({ ...props }): JSX.Element => {
   return (

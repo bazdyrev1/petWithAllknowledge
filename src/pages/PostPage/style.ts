@@ -31,7 +31,6 @@ export const AuthorBlock = styled.div`
 `;
 
 export const ArticleTitle = styled.h1`
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   width: auto;
   font-size: 2.4em;
@@ -44,7 +43,6 @@ export const Article = styled.p`
   text-indent: 3vh;
   width: 90%;
   height: auto;
-  font-family: 'Roboto', sans-serif;
   font-size: 1.4em;
   font-weight: 300;
   margin: 3vw auto;
@@ -65,6 +63,10 @@ export const InfoText = styled.p`
   display: flex;
   align-items: center;
   color: gray;
+
+  svg{
+    margin-right: 3px;
+  }
 `;
 
 export const IconClock = styled(AccessTimeIcon)``;
