@@ -102,4 +102,5 @@ const AuthorizationZoneHeader: FC<IAuthorizationZoneHeader> = ({ auth: { isAdmin
     </ButtonBlock>
   )
 }
+
 export default AuthorizationZoneHeader;

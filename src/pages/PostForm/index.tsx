@@ -15,9 +15,6 @@ import ImageDownloading from "../../components/ImageDownloading";
 import MaterialSelect from "../../components/MaterialSelect";
 import { ArticlePost, ButtonsWrapper, FormWrapper, Title, TitlePost, Wrapper, WrapperTitleAndMainImage } from "./style";
 
-
-
-
 const getDefaultValues = (data: IAllPosts) => ({
   type: data?.type ?? '',
   postId: data?.postId ?? '',
@@ -30,7 +27,7 @@ const getDefaultValues = (data: IAllPosts) => ({
   additionalImages: data?.additionalImages ?? [],
 })
 
-export const PostForm: FC = (): JSX.Element => {
+const PostForm: FC = (): JSX.Element => {
   const [mainImage, setMainImage] = useState([]);
   const [additionalImages, setAdditionalImages] = useState([]);
   

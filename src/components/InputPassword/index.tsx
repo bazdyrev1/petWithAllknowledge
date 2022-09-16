@@ -19,6 +19,7 @@ const InputPassword: FC<IInputPassword>= ({ form: { errors, touched, values, set
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
   };
+  
   return (
     <InputsPassWrapper>
       <FormControl>

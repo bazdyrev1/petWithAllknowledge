@@ -3,6 +3,7 @@ import MaterialTabs from "../../components/MaterialTabs";
 import { MainIdea, NameBlog, Wrapper, AboutBlogBox, ContentBox, ColorWords } from "./style";
 
 const Home: FC = (): JSX.Element => {
+  
   return (
     <Wrapper>
       <AboutBlogBox>

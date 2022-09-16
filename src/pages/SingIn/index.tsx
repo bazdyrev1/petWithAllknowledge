@@ -7,7 +7,6 @@ import ErrorIcon from '@mui/icons-material/Error';
 import { authUser } from '../../store/reducers/singInReducer'
 import { getAllUsers } from '../../store/reducers/usersReducer'
 import { IUsers } from '../../store/reducers/types'
-
 import { ButtonMaterialCustom, ErrorText, FormWrapper, Navigate, NavigateForward, TextFieldCustom, Title, Wrapper } from './style'
 
 const SingIn: FC = (): JSX.Element => {
@@ -24,6 +23,7 @@ const SingIn: FC = (): JSX.Element => {
     if (login === process.env.REACT_APP_ADMIN_LOGIN && password === process.env.REACT_APP_ADMIN_PASSWORD) {
       dispatch(authUser({ isAdmin: true, isAuth: true, login: 'admin' }));
       navigate('/');
+
       return
     }
 
@@ -35,9 +35,12 @@ const SingIn: FC = (): JSX.Element => {
         navigate('/');
       }
       setError(true);
+
       return
     }
+    setError(true);
   }
+  
   return (
     <Wrapper>
       <FormWrapper>

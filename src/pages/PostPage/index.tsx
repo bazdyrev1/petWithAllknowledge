@@ -34,10 +34,12 @@ const PostPage: FC = (): JSX.Element => {
     if (!auth.isAdmin) {
       const authUser = listUsers.find(user => user.mail === auth.login)
       const validateToChange = openPost?.authorId === authUser?.authorId;
+
       return (
           validateToChange
       )
     }
+    
     return false;
   }
   const permissionForEdit = checkPermissionForEdit(auth, listUsers);

@@ -45,6 +45,7 @@ export const getAllPosts = (state: RootState) => state.posts;
 export const getCategoryOptions = (state: RootState) =>
   state.posts.reduce((container, obj) => {
     if (container.includes(obj.type)) {
+      
       return [...container];
     }
 

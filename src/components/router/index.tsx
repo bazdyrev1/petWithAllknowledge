@@ -6,7 +6,7 @@ import  PostForm from "../../pages/PostForm";
 import RegistrationForm  from "../../pages/RegistrationForm";
 import  PostPage  from "../../pages/PostPage";
 import SingIn from "../../pages/SingIn";
-import { Header } from "../Header";
+import Header from "../Header";
 import { isAuth } from "../../store/reducers/singInReducer";
 
 export const PublicRoutes: FC<any> = () => {

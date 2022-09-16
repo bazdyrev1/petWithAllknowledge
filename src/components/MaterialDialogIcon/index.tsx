@@ -34,4 +34,5 @@ const MaterialDialogIcon: FC<IMaterialDialogIcon> = ({ item }): JSX.Element => {
     </Wrapper>
   );
 }
+
 export default MaterialDialogIcon;

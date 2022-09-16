@@ -35,7 +35,8 @@ export const MainImagePreview = styled.img`
 
 export const ShortInfoPost = styled.div`
   width: 100%;
-  height: 30vh;
+  min-height: 30vh;
+  max-height: 35vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,3 +103,11 @@ export const ControlButtons = styled.div`
     margin: 0 5px;
   }
 `;
+
+export const Box = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+`

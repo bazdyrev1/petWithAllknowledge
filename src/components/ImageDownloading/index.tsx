@@ -94,4 +94,5 @@ const ImageDownloading: FC<IImageDownloading> = ({ maxFiles, imageDefault, getFi
     </Wrapper>
   )
 }
+
 export default ImageDownloading;

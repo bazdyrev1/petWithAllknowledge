@@ -12,4 +12,5 @@ const BackgroundLetterAvatars: FC<IBackgroundLetterAvatars> = ({ name }): JSX.El
     </Stack>
   );
 }
+
 export default BackgroundLetterAvatars;

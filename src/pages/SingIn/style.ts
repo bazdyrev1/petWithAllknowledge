@@ -17,7 +17,7 @@ export const FormWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  margin-top: 10%;
+  margin-top: 5%;
   padding: 5%;
   border-radius: 10px;
   overflow: hidden;

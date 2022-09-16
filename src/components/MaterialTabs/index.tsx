@@ -10,6 +10,7 @@ import PaginationMaterial from "../PaginationMaterial";
 import { Wrapper } from "./style";
 
 const allyProps = (index: number) => {
+  
     return {
         id: `vertical-tab-${index}`,
         "aria-controls": `vertical-tabpanel-${index}`

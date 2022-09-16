@@ -10,7 +10,7 @@ import { getAllUsers } from "../../store/reducers/usersReducer";
 import { ISingIn } from "../../store/reducers/types";
 import BackgroundLetterAvatars from "../BackgroundLetterAvatars";
 import { IPost } from "./types";
-import { ArticleWrapper, ArticlePreview, AuthorNameAndData, ControlButtons, InfoParagraph, InformationAboutAuthor, MainImageBox, MainImagePreview, ShortInfoPost, TitlePost, Wrapper } from "./style";
+import { ArticleWrapper, ArticlePreview, AuthorNameAndData, ControlButtons, InfoParagraph, InformationAboutAuthor, MainImageBox, MainImagePreview, ShortInfoPost, TitlePost, Wrapper, Box } from "./style";
 
 const Post: FC<IPost> = ({ postItem }): JSX.Element => {
   const [visible, setVisible] = useState(false)
@@ -66,16 +66,14 @@ const Post: FC<IPost> = ({ postItem }): JSX.Element => {
         </ArticleWrapper>
           
         <InformationAboutAuthor>
-          
-
-          {((auth.isAdmin || permissionForEdit) && !visible) &&  
-            <div>
+          {( !permissionForEdit ||  !visible) &&  
+            <Box>
               <BackgroundLetterAvatars name={postItem.authorName} />
               <AuthorNameAndData>
                 <InfoParagraph>{postItem.authorName}</InfoParagraph>
                 <InfoParagraph>{postItem.date}</InfoParagraph>
               </AuthorNameAndData>
-            </div>
+            </Box>
           } 
           {((auth.isAdmin || permissionForEdit) && visible) &&
             <ControlButtons>
@@ -111,4 +109,5 @@ const Post: FC<IPost> = ({ postItem }): JSX.Element => {
     </Wrapper>
   )
 }
+
 export default Post;

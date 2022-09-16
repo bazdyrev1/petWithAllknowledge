@@ -5,7 +5,7 @@ import { isAuth } from "../../store/reducers/singInReducer";
 import AuthorizationZoneHeader from "../AuthorizationZoneHeader";
 import { BoldText, LogoBox, NameBlog, ReactLogoIcon, Wrapper } from "./style";
 
-export const Header: FC = (): JSX.Element => {
+const Header: FC = (): JSX.Element => {
   const auth = useSelector(isAuth);
   const navigate = useNavigate();
 
@@ -25,3 +25,5 @@ export const Header: FC = (): JSX.Element => {
     </Wrapper>
   )
 }
+
+export default Header;
