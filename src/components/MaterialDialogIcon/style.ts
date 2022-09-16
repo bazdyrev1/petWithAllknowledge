@@ -26,6 +26,6 @@ export const CustomBox = styled(Box)`
     min-width: 360px;
     max-width: 70vw;
     min-height: 320px;
-    max-height: 800px;
+    max-height: 80vh;
   }
 `;

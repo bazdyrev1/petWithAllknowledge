@@ -116,7 +116,8 @@ export const TextFieldCustom = styled(TextField)`
 `;
 
 export const ButtonMaterialCustom = styled(Button)`
-  height: 5vh;
+  min-height: 5vh;
+  max-height: 6vh;
 
   p {
     margin: 0.5em 0.5em;

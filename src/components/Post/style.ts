@@ -55,9 +55,7 @@ export const TitlePost = styled.p`
 
 export const ArticleWrapper = styled.div`
   width: 91%;
-  height: 20vh;
   padding: 0px 15px;
-  max-height: 15vh;
 	margin-bottom: 20px;
   overflow: hidden;
 `;

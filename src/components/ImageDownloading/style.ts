@@ -55,7 +55,7 @@ export const ImageItemButtonsWrapper = styled.div`
   justify-content: space-evenly;
  
   button {
-    width: 13vh;
+    width: 14vh;
     margin: 0 5px;
   }
 `;

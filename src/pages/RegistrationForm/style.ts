@@ -11,7 +11,7 @@ export const Wrapper = styled.article`
 
 export const FormWrapper = styled.div`
   display: flex;
-  width: 40vh;
+  width: 50vh;
   height: auto;
   flex-direction: column;
   justify-content: space-evenly;

@@ -66,7 +66,7 @@ const Post: FC<IPost> = ({ postItem }): JSX.Element => {
         </ArticleWrapper>
           
         <InformationAboutAuthor>
-          {( !permissionForEdit ||  !visible) &&  
+          {((!auth.isAdmin && !permissionForEdit) ||  !visible) &&  
             <Box>
               <BackgroundLetterAvatars name={postItem.authorName} />
               <AuthorNameAndData>
