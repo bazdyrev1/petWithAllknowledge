@@ -1,3 +1,5 @@
+* Admin data: (Login : admin, password: admin)
+The administrator can edit any post and can create his own. Registered users can only create and edit their own posts. Creating a post is done from the modal menu, which can be accessed by clicking on the user logo. The post modification buttons appear when you hover over the post, or the post itself has a triplet icon on the page of the post. 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
