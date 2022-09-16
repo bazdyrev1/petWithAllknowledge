@@ -63,7 +63,7 @@ export const ContentBox = styled.article`
 
   .MuiTabs-flexContainer {
     button {
-      color: #b793eb;
+      color: #9c60f1;
       margin: 10px 0;
       box-shadow: 0px 0px 1px;
       font-size: 1em;

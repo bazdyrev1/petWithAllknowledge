@@ -66,13 +66,17 @@ const Post: FC<IPost> = ({ postItem }): JSX.Element => {
         </ArticleWrapper>
           
         <InformationAboutAuthor>
-          <BackgroundLetterAvatars name={postItem.authorName} />
-            
-          <AuthorNameAndData>
-            <InfoParagraph>{postItem.authorName}</InfoParagraph>
-            <InfoParagraph>{postItem.date}</InfoParagraph>
-          </AuthorNameAndData>
-            
+          
+
+          {((auth.isAdmin || permissionForEdit) && !visible) &&  
+            <div>
+              <BackgroundLetterAvatars name={postItem.authorName} />
+              <AuthorNameAndData>
+                <InfoParagraph>{postItem.authorName}</InfoParagraph>
+                <InfoParagraph>{postItem.date}</InfoParagraph>
+              </AuthorNameAndData>
+            </div>
+          } 
           {((auth.isAdmin || permissionForEdit) && visible) &&
             <ControlButtons>
               <IconButton

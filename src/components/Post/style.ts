@@ -35,7 +35,7 @@ export const MainImagePreview = styled.img`
 
 export const ShortInfoPost = styled.div`
   width: 100%;
-  height: auto;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,10 +54,11 @@ export const TitlePost = styled.p`
 
 export const ArticleWrapper = styled.div`
   width: 91%;
-  height: auto;
+  height: 20vh;
   padding: 0px 15px;
-  height: 13vh;
+  max-height: 15vh;
 	margin-bottom: 20px;
+  overflow: hidden;
 `;
 
 export const ArticlePreview = styled.p`
@@ -72,9 +73,9 @@ export const ArticlePreview = styled.p`
 `;
 
 export const InformationAboutAuthor = styled.div`
-  width: 100%;
-  padding: 0 15px 0 25px;
+  width: 90%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -89,11 +90,15 @@ export const InfoParagraph = styled.p`
 `;
 
 export const ControlButtons = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: #9c27b0;
-
   button{
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin: 0 5px;
   }
 `;

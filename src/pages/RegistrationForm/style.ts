@@ -99,7 +99,7 @@ export const TextFieldCustom = styled(TextField)`
   width: 90%;
   min-height: 8vh;
   height: auto;
-  margin-bottom: 20px !important;
+  margin-bottom: 15px !important;
 
   .MuiOutlinedInput-root {
     width: 100%;

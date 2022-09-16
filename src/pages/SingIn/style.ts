@@ -12,8 +12,8 @@ export const Wrapper = styled.article`
 
 export const FormWrapper = styled.div`
   display: flex;
-  width: 40vh;
-  height: 40vh;
+  width: 45vh;
+  height: 50vh;
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
