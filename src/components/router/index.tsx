@@ -8,6 +8,7 @@ import  PostPage  from "../../pages/PostPage";
 import SingIn from "../../pages/SingIn";
 import Header from "../Header";
 import { isAuth } from "../../store/reducers/singInReducer";
+import GitDataPage from "../../pages/GitDataPage";
 
 export const PublicRoutes: FC<any> = () => {
   const auth = useSelector(isAuth);
@@ -29,6 +30,7 @@ export const PublicRoutes: FC<any> = () => {
           </>
         }
         <Route path="/post/:type/:id" element={<PostPage />} />
+        <Route path="/gitData" element={<GitDataPage />} />
         <Route path='*' element={<Home />} />
       </Routes> 
       </BrowserRouter>
