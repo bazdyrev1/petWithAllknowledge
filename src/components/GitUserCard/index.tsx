@@ -19,7 +19,7 @@ const GitUserCard: FC = (): JSX.Element => {
                 </div>
 
                 <div>
-                <a href={item[1]}>{item[1]}</a>
+                <span>{item[1]}</span>
                 </div>
             </div>   
             )}
