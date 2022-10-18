@@ -2,6 +2,7 @@ import { usersReducer } from "./reducers/usersReducer";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { postsReducer } from "./reducers/postsReducer";
 import { singInReducer } from "./reducers/singInReducer";
+import { gitDataReducer } from './reducers/gitDataReducer'
 import {
   persistStore,
   persistReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   posts: postsReducer,
   users: usersReducer,
   singIn: singInReducer,
+  gitData: gitDataReducer,
 });
 
 const persistConfig = {
