@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home  from "../../pages/Home";
 import  PostForm from "../../pages/PostForm";
-import RegistrationForm  from "../../pages/RegistrationForm";
+import RegistrationForm  from "../../pages/RegistrationForm/view";
 import  PostPage  from "../../pages/PostPage";
 import SingIn from "../../pages/SingIn";
 import Header from "../Header";
