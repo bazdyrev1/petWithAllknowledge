@@ -1,27 +1,23 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getGitData } from '../../store/reducers/gitDataReducer';
-import { Wrapper } from './style';
+import { CategoryItem, DataItem, InfoBlock, TableText, Wrapper } from './style';
 
-const GitUserCard: FC = (): JSX.Element => {
-
+const GitUserCard:FC = ():JSX.Element => {
     const userDataInStore = Object.entries(useSelector(getGitData));
-
-    console.log(userDataInStore)
 
     return (
         <Wrapper>
-           {userDataInStore.map(item => 
-           <div>
+           {userDataInStore.map((item, index) => 
+           <InfoBlock key={index}>
+                <CategoryItem>
+                <TableText>{item[0]}</TableText>
+                </CategoryItem>
 
-                <div>
-                <span>{item[0]}</span>
-                </div>
-
-                <div>
-                <span>{item[1]}</span>
-                </div>
-            </div>   
+                <DataItem>
+                <TableText>{item[1]}</TableText>
+                </DataItem>
+            </InfoBlock>   
             )}
         </Wrapper>
         )
