@@ -20,7 +20,7 @@ import {
   Wrapper,
 } from "../style";
 import InputPassword from "../../../components/InputPassword";
-import CustomButtonComponent from "../components/CustomButtonComponent";
+import CustomButtonComponent from "../components/CustomButtomComponent/CustomButtonComponent";
 
 const RegistrationForm: FC = (): JSX.Element => {
   const initialValues: IRegistrationForm = {
@@ -54,8 +54,6 @@ const RegistrationForm: FC = (): JSX.Element => {
     navigate("/");
   };
 
-
-  console.log()
   return (
     <Wrapper>
       <FormWrapper>
