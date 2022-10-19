@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getGitData } from '../../store/reducers/gitDataReducer';
-import { CategoryItem, DataItem, InfoBlock, TableText, Wrapper } from './style';
+import { CategoryItem, DataItem, ErrorMessage, InfoBlock, TableText, Wrapper } from './style';
 
 const GitUserCard:FC = ():JSX.Element => {
     const userDataInStore = Object.entries(useSelector(getGitData));
 
     return (
         <Wrapper>
-           {userDataInStore.map((item, index) => 
+           {userDataInStore.length ? userDataInStore.map((item, index) => 
            <InfoBlock key={index}>
                 <CategoryItem>
                 <TableText>{item[0]}</TableText>
@@ -18,7 +18,8 @@ const GitUserCard:FC = ():JSX.Element => {
                 <TableText>{item[1]}</TableText>
                 </DataItem>
             </InfoBlock>   
-            )}
+            )
+        : <ErrorMessage> Please repeat with new search parameter!</ErrorMessage>}
         </Wrapper>
         )
 }

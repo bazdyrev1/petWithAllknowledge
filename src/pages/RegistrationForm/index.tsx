@@ -1,17 +1,17 @@
 import React, { FC } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Form, Formik, Field } from "formik";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { validateSchema } from './schema'
-import { isEmpty } from "lodash";
-import InputPassword from "../../components/InputPassword";
 import { addUser } from "../../store/reducers/usersReducer";
-import { IRegistrationForm } from "./types";
+import { Inputs, IRegistrationForm } from "./types";
 import { ButtonsWrapper, ErrorsMessage, FormWrapper, MaterialButtonCustom, TextFieldCustom, Title, Wrapper } from "./style";
 
 const RegistrationForm: FC = (): JSX.Element => {
+
   const initialValues: IRegistrationForm = {
     nickName: '',
     authorName: '',
@@ -23,103 +23,148 @@ const RegistrationForm: FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const {
+    handleSubmit,
+    control,
+    formState: { errors, isValid },
+    reset,
+    getValues
+  } = useForm<Inputs>({
+    mode: "onTouched",
+    defaultValues: initialValues,
+    resolver: yupResolver(validateSchema),
+  });
+
+  
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    dispatch(addUser(data))
+    console.log('submit', data)
+    reset();
+  }
+  console.log(getValues())
   return (
     <Wrapper>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={() => { }}
-        validationSchema={validateSchema}
-        validateOnMount
-      >
-      {({ values, errors, touched, setFieldValue, setFieldTouched, handleChange, handleBlur }) => {
+      <FormWrapper>
+        <form onSubmit={handleSubmit(onSubmit)}>
 
-          return (
-            <FormWrapper>
-              <Form>
-                  <Title>Registration new person</Title>
+                    <Title>Registration new person</Title>
 
-                  <Field
-                    id="authorName"
-                    name="authorName"
-                    onBlur={handleBlur}
-                    component={TextFieldCustom}
-                    variant="outlined"
-                    label="Full name"
-                    helperText={(errors?.authorName && touched?.authorName) &&
-                        <ErrorsMessage>{errors?.authorName}</ErrorsMessage>
-                    }
-                    onClick={() => setFieldTouched("authorName", true)}
-                    onChange={(e:  React.ChangeEvent<HTMLInputElement>) => setFieldValue("authorName", e.target.value)}
-                  />
-
-                  <Field
-                    id="nickName"
-                    name="nickName"
-                    onBlur={handleBlur}
-                    component={TextFieldCustom}
-                    variant="outlined"
-                    label="Nick name"
-                    helperText={(errors?.nickName && touched?.nickName) &&
-                        <ErrorsMessage>{errors?.nickName}</ErrorsMessage>
-                    }
-                    onClick={() => setFieldTouched("nickName", true)}
-                    onChange={(e:  React.ChangeEvent<HTMLInputElement>) => setFieldValue("nickName", e.target.value)}
-                  />
-
-                  <Field
-                    id="mail"
-                    name="mail"
-                    onBlur={handleBlur}
-                    component={TextFieldCustom}
-                    variant="outlined"
-                    label="Email"
-                    helperText={(errors?.mail && touched?.mail) &&
-                        <ErrorsMessage>{errors?.mail}</ErrorsMessage>
-                    }
-                    onClick={() => setFieldTouched("mail", true)}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFieldValue("mail", e.target.value)}
-                  />
-
-                  <Field
-                    id='password'
-                    name='password'
-                    component={InputPassword}
-                  />
-
-                  <Field
-                    id='examinationPass'
-                    name='examinationPass'
-                    component={InputPassword}
-                  />
-
-                  <ButtonsWrapper>
-                    <MaterialButtonCustom
-                      variant="outlined"
-                      color='secondary'
-                      children={<p>Home</p>}
-                      startIcon={<ArrowBackIosIcon />}
-                      onClick={() =>
-                          navigate('/')
-                      }
+                    <Controller
+                      name="authorName"
+                      control={control}
+                      defaultValue=""
+                      render={({ field }) => (
+                        <TextFieldCustom
+                          {...field}
+                          variant="outlined"
+                          label="Full name"
+                          helperText={
+                            <ErrorsMessage>
+                              {errors?.authorName?.message}
+                            </ErrorsMessage>
+                          }
+                        />
+                      )}
                     />
 
-                    <MaterialButtonCustom
-                      variant="outlined"
-                      color='secondary'
-                      children={<p>Register</p>}
-                      endIcon={<ArrowForwardIosIcon />}
-                      onClick={() => {
-                          dispatch(addUser(values))
-                          navigate('/')
-                      }}
-                      disabled={!isEmpty(errors)}
+                    <Controller
+                      name="nickName"
+                      control={control}
+                      defaultValue=""
+                      render={({ field }) => (
+                        <TextFieldCustom
+                          {...field}
+                          variant="outlined"
+                          label="Nick name"
+                          helperText={
+                            <ErrorsMessage>
+                              {errors?.nickName?.message}
+                            </ErrorsMessage>
+                          }
+                        />
+                      )}
                     />
-                  </ButtonsWrapper>
-              </Form>
-            </FormWrapper>
-          )
-        }}
-      </Formik>
+
+                    <Controller
+                      name="mail"
+                      control={control}
+                      defaultValue=""
+                      render={({ field }) => (
+                        <TextFieldCustom
+                          {...field}
+                          variant="outlined"
+                          label="Email"
+                          helperText={
+                            <ErrorsMessage>
+                              {errors?.mail?.message}
+                            </ErrorsMessage>
+                          }
+                        />
+                      )}
+                    />
+
+                    <Controller
+                      name="password"
+                      control={control}
+                      defaultValue=""
+                      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
+                        <TextFieldCustom
+                          label="Password"
+                          variant="outlined"
+                          value={value}
+                          onClick={() => onBlur()}
+                          onChange={onChange}
+                          error={!!error}
+                          helperText={<ErrorsMessage>
+                            {errors?.password?.message}
+                          </ErrorsMessage>}
+                          type="password"
+                        />
+                      )}
+                      />
+                      <Controller
+                        name="examinationPass"
+                        control={control}
+                        defaultValue=""
+                        render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
+                          <TextFieldCustom
+                            label="Password"
+                            variant="outlined"
+                            value={value}
+                            onClick={() => onBlur()}
+                            onChange={onChange}
+                            error={!!error}
+                            helperText={<ErrorsMessage>
+                              {errors?.examinationPass?.message}
+                            </ErrorsMessage>}
+                            type="password"
+                          />
+                        )}
+                      />
+
+                    <ButtonsWrapper>
+                      <MaterialButtonCustom
+                        variant="outlined"
+                        color='secondary'
+                        children={<p>Home</p>}
+                        startIcon={<ArrowBackIosIcon />}
+                        onClick={() =>
+                            navigate('/')
+                        }
+                      />
+
+                      <MaterialButtonCustom
+                        variant="outlined"
+                        color='secondary'
+                        children={<p>Register</p>}
+                        endIcon={<ArrowForwardIosIcon />}
+                        type="submit"
+                        disabled={!isValid}
+                      />
+                    </ButtonsWrapper>
+        </form>
+      </FormWrapper>
     </Wrapper>
   )
 }

@@ -5,3 +5,11 @@ export interface IRegistrationForm {
     password: string,
     examinationPass: string,
 }
+export type Inputs = {
+    authorName: string,
+    nickName: string,
+    mail: string,
+    password: string,
+    examinationPass: string,
+  };
+  

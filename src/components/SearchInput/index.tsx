@@ -6,7 +6,7 @@ import { validateSchema } from "./schema";
 import { Inputs } from "./types";
 import { Wrapper, TextFieldCustom, ErrorMessage } from "./style";
 
-const SearchInput = ( { searchParameter } ) => {
+const SearchInput = ({ searchParameter }) => {
 
   const {
     handleSubmit,
