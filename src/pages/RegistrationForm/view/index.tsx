@@ -1,14 +1,17 @@
-import React, { FC } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { FC }                          from "react";
+import { useDispatch }                        from "react-redux";
+import { useNavigate }                        from "react-router-dom";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { yupResolver } from "@hookform/resolvers/yup";
+import ArrowBackIosIcon    from "@mui/icons-material/ArrowBackIos";
+import { yupResolver }     from "@hookform/resolvers/yup";
 
-import { validateSchema } from "../schema";
-import { addUser } from "../../../store/reducers/usersReducer";
+import { addUser }           from "../../../store/reducers/usersReducer";
+import InputPassword         from "../../../components/InputPassword";
+import CustomButtonComponent from "../components/CustomButtomComponent/CustomButtonComponent";
+
+import { validateSchema }            from "../schema";
 import { Inputs, IRegistrationForm } from "../types";
 import {
   ButtonsWrapper,
@@ -19,8 +22,6 @@ import {
   Title,
   Wrapper,
 } from "../style";
-import InputPassword from "../../../components/InputPassword";
-import CustomButtonComponent from "../components/CustomButtomComponent/CustomButtonComponent";
 
 const RegistrationForm: FC = (): JSX.Element => {
   const initialValues: IRegistrationForm = {
@@ -163,14 +164,13 @@ const RegistrationForm: FC = (): JSX.Element => {
             control      = {control}
             defaultValue = ""
             render       = {({
-              field     : { onChange, value, onBlur, name, ref },
+              field     : { value, name },
               fieldState: { error },
             }) => (
               <CustomButtonComponent
                 value    = {value}
                 name     = {name}
-                ref      = {ref}
-                setValue={setValue}
+                setValue = {setValue}
               />
             )}
           />

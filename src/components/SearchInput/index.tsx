@@ -1,20 +1,22 @@
-import React from "react";
-import { Button } from "@mui/material";
+import React                                  from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
+
+import { Button }      from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
+
 import { validateSchema } from "./schema";
-import { Inputs } from "./types";
+import { Inputs }         from "./types";
+
 import { Wrapper, TextFieldCustom, ErrorMessage } from "./style";
 
 const SearchInput = ({ searchParameter }) => {
-
   const {
     handleSubmit,
     control,
     formState: { errors },
     reset,
   } = useForm<Inputs>({
-    mode: "onBlur",
+    mode    : "onBlur",
     resolver: yupResolver(validateSchema),
   });
 
@@ -26,17 +28,16 @@ const SearchInput = ({ searchParameter }) => {
   return (
     <Wrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
-
         <Controller
-          name="nickNameSearchPerson"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
+          name         = "nickNameSearchPerson"
+          control      = {control}
+          defaultValue = ""
+          render       ={({ field }) => (
             <TextFieldCustom
               {...field}
-              variant="outlined"
-              label="Full name"
-              helperText={
+              variant    = "outlined"
+              label      = "Full name"
+              helperText = {
                 <ErrorMessage>
                   {errors.nickNameSearchPerson?.message}
                 </ErrorMessage>
@@ -44,12 +45,11 @@ const SearchInput = ({ searchParameter }) => {
             />
           )}
         />
-
         <Button 
-            children={'Search'}
-            variant="outlined"
-            color="secondary"
-            type="submit"
+          children = {'Search'}
+          variant  = "outlined"
+          color    = "secondary"
+          type     = "submit"
         />
       </form>
     </Wrapper>

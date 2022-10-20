@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
 export const InfoBlock = styled.div`
   display: flex;
-  width: 70%;
+  width: 100%;
   height: 5vh;
   border-bottom: 1px solid gray;
   flex-direction: row;
