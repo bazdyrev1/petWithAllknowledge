@@ -371,25 +371,32 @@ export const defaultOptionsCategory = [
 ];
 
 export const defaultGitData = {
-  login: "bazdyrev1",
-  id: 85830395,
-  node_id: "MDQ6VXNlcjg1ODMwMzk1",
-  avatar_url: "https://avatars.githubusercontent.com/u/85830395?v=4",
-  gravatar_id: "",
-  url: "https://api.github.com/users/bazdyrev1",
-  html_url: "https://github.com/bazdyrev1",
-  followers_url: "https://api.github.com/users/bazdyrev1/followers",
-  following_url: "https://api.github.com/users/bazdyrev1/following{/other_user}",
-  gists_url: "https://api.github.com/users/bazdyrev1/gists{/gist_id}",
-  starred_url: "https://api.github.com/users/bazdyrev1/starred{/owner}{/repo}",
-  subscriptions_url: "https://api.github.com/users/bazdyrev1/subscriptions",
-  organizations_url: "https://api.github.com/users/bazdyrev1/orgs",
-  repos_url: "https://api.github.com/users/bazdyrev1/repos",
-  events_url: "https://api.github.com/users/bazdyrev1/events{/privacy}",
-  received_events_url: "https://api.github.com/users/bazdyrev1/received_events",
-  type: "User",
-  site_admin: false,
-  score: 1.0,
-  status: null,
-  error: null
+  dataInfo: {
+    status: null,
+    error: null,
+  },
+  data: [
+    {
+      login: "bazdyrev1",
+      id: 85830395,
+      node_id: "MDQ6VXNlcjg1ODMwMzk1",
+      avatar_url: "https://avatars.githubusercontent.com/u/85830395?v=4",
+      gravatar_id: "",
+      url: "https://api.github.com/users/bazdyrev1",
+      html_url: "https://github.com/bazdyrev1",
+      followers_url: "https://api.github.com/users/bazdyrev1/followers",
+      following_url: "https://api.github.com/users/bazdyrev1/following{/other_user}",
+      gists_url: "https://api.github.com/users/bazdyrev1/gists{/gist_id}",
+      starred_url: "https://api.github.com/users/bazdyrev1/starred{/owner}{/repo}",
+      subscriptions_url: "https://api.github.com/users/bazdyrev1/subscriptions",
+      organizations_url: "https://api.github.com/users/bazdyrev1/orgs",
+      repos_url: "https://api.github.com/users/bazdyrev1/repos",
+      events_url: "https://api.github.com/users/bazdyrev1/events{/privacy}",
+      received_events_url: "https://api.github.com/users/bazdyrev1/received_events",
+      type: "User",
+      site_admin: false,
+      status: null,
+      error: null
+    },
+  ]
 };

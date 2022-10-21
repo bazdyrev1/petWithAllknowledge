@@ -28,4 +28,7 @@ export const DataItem = styled.div``;
 export const TableText = styled.p``;
 
 export const ErrorMessage = styled.p`
-color: red;`
+  color: red;
+`;
+
+export const Link = styled.a``;

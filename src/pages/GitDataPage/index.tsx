@@ -1,21 +1,22 @@
-import React, { FC, useEffect, useState } from "react";
-import { useDispatch }                    from "react-redux";
+import React, { FC, useState } from "react";
+import { useDispatch }         from "react-redux";
 
 import SearchPanel from "../../components/SearchInput";
 import GitUserCard from "../../components/GitUserCard";
 
 import { fetchGitData } from "../../store/reducers/gitDataReducer";
-import { AppDispatch }              from "../../store";
+import { AppDispatch }  from "../../store";
 
 import { SearchBlock, Wrapper } from "./style";
 
+const DonwloadingData = (request): void => {
+  const dispatch = useDispatch<AppDispatch>();
+  dispatch(fetchGitData(request));
+};
+
 const GitDataPage: FC = (): JSX.Element => {
   const [request, setRequest] = useState("bazdyrev1");
-  const dispatch              = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatch(fetchGitData(request));
-  }, [request]);
+  DonwloadingData(request);
 
   return (
     <Wrapper>

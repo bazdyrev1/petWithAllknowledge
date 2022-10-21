@@ -1,36 +1,37 @@
-import React, { FC }   from 'react';
-import { useSelector } from 'react-redux';
+import React, { FC }   from "react";
+import { useSelector } from "react-redux";
 
-import { getGitData } from '../../store/reducers/gitDataReducer';
+import { getGitData } from "../../store/reducers/gitDataReducer";
 
-import { 
-  CategoryItem, 
-  DataItem, 
-  ErrorMessage, 
-  InfoBlock, 
-  TableText, 
-  Wrapper 
-} from './style';
+import {
+  CategoryItem,
+  DataItem,
+  ErrorMessage,
+  InfoBlock,
+  Link,
+  TableText,
+  Wrapper,
+} from "./style";
 
-const GitUserCard:FC = ():JSX.Element => {
-  const userDataInStore = Object.entries(useSelector(getGitData));
-  
+const GitUserCard: FC = (): JSX.Element => {
+  const userDataInStore = useSelector(getGitData).data;
 
   return (
     <Wrapper>
-      {userDataInStore.length ? userDataInStore.map((item, index) => 
-        <InfoBlock key={index}>
-          <CategoryItem>
-          <TableText>{item[0]}</TableText>
-          </CategoryItem>  
-          <DataItem>
-          <TableText>{item[1]?.toString() }</TableText>
-          </DataItem>
-        </InfoBlock>   
-        )
-        :  
+      {!!userDataInStore.items?.length ? (
+        userDataInStore.items.map((item, index) => (
+          <InfoBlock key={index}>
+            <CategoryItem>
+              <TableText>{item?.login}</TableText>
+            </CategoryItem>
+            <DataItem>
+              <Link href={item.url}>{item.url} </Link>
+            </DataItem>
+          </InfoBlock>
+        ))
+      ) : (
         <ErrorMessage> Please repeat with new search parameter!</ErrorMessage>
-      }
+      )}
     </Wrapper>
   );
 };

@@ -16,11 +16,12 @@ export const fetchGitData = createAsyncThunk(
       
       return data;
     } catch(error){
+
       return rejectWithValue(error.message)
     } 
    
   }
-)
+);
 
 const gitDataSlice = createSlice({
     name        : "gitData",
@@ -32,25 +33,26 @@ const gitDataSlice = createSlice({
            ...action.payload
         }
 
-      }
+      },
     },
     /* eslint-disable */
     extraReducers: (builder) => {
       builder.addCase(fetchGitData.pending, (state, action) => {
-        state.status = 'loading';
-        state.error  = null;
+        state.dataInfo.status = 'loading'; //переделать это
+        state.dataInfo.error  = null;
       });
       builder.addCase(fetchGitData.fulfilled, (state, action) => {
-        state.status = 'resolved';
-        action.payload.items[0]
+        state.dataInfo.status = 'resolved';
+        state.data            = action.payload;
       });
       builder.addCase(fetchGitData.rejected, (state, action) => {
-        state.status = 'rejected';
-        state.error  = action.payload
+        state.dataInfo.status = 'rejected';
+        state.dataInfo.error  = action.payload
       })
     },
     
-})
+});
+
 export const { addGitData } = gitDataSlice.actions;
 
 export const getGitData = (state: RootState) => state.gitData;

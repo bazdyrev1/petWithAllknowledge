@@ -2,26 +2,26 @@ import React, { FC } from 'react';
 
 import { RgbButton, Wrapper } from './style';
 
-const CustomButtonComponent: FC<any> = ({ value, setValue }): JSX.Element => {
+const CustomButtonComponent: FC<any> = ({ value, setValue, name }): JSX.Element => {
   return (
     <Wrapper>
       <RgbButton
         type     = 'button'
-        onClick  = {() => setValue('switcher', 'One')}
+        onClick  = {() => setValue(`${name}`, 'One')}
         isActive = {value === 'One'}
       >
         One
       </RgbButton>
       <RgbButton
         type     = 'button'
-        onClick  = {() => setValue('switcher', 'Two')}
+        onClick  = {() => setValue(`${name}`, 'Two')}
         isActive = {value === 'Two'}
       >
         Two
       </RgbButton>
       <RgbButton
         type     = 'button'
-        onClick  = {() => setValue('switcher', 'Three')}
+        onClick  = {() => setValue(`${name}`, 'Three')}
         isActive = {value === 'Three'}
       >
         Three

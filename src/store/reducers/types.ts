@@ -26,7 +26,12 @@ export interface IUsers {
   authorId: string;
 }
 
-export interface IGitData {
+export interface IDataInfo {
+  status: string | null,
+  error: string | null
+}
+
+export interface IData {
   login: string,
   id: number,
   node_id: string,
@@ -45,7 +50,10 @@ export interface IGitData {
   received_events_url: string,
   type: string,
   site_admin: boolean,
-  score: number,
-  status: string | null,
-  error: string | null
+
+}
+
+export interface IGitData {
+  dataInfo: IDataInfo,
+  data: IData[],
 }
