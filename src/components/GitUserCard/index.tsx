@@ -14,6 +14,7 @@ import {
 
 const GitUserCard:FC = ():JSX.Element => {
   const userDataInStore = Object.entries(useSelector(getGitData));
+  
 
   return (
     <Wrapper>
@@ -23,13 +24,13 @@ const GitUserCard:FC = ():JSX.Element => {
           <TableText>{item[0]}</TableText>
           </CategoryItem>  
           <DataItem>
-          <TableText>{item[1]}</TableText>
+          <TableText>{item[1]?.toString() }</TableText>
           </DataItem>
         </InfoBlock>   
         )
         :  
         <ErrorMessage> Please repeat with new search parameter!</ErrorMessage>
-      };
+      }
     </Wrapper>
   );
 };

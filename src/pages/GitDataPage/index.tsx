@@ -4,7 +4,7 @@ import { useDispatch }                    from "react-redux";
 import SearchPanel from "../../components/SearchInput";
 import GitUserCard from "../../components/GitUserCard";
 
-import { addGitData, fetchGitData } from "../../store/reducers/gitDataReducer";
+import { fetchGitData } from "../../store/reducers/gitDataReducer";
 import { AppDispatch }              from "../../store";
 
 import { SearchBlock, Wrapper } from "./style";

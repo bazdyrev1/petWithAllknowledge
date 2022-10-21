@@ -389,5 +389,7 @@ export const defaultGitData = {
   received_events_url: "https://api.github.com/users/bazdyrev1/received_events",
   type: "User",
   site_admin: false,
-  score: 1.0
+  score: 1.0,
+  status: null,
+  error: null
 };

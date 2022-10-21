@@ -45,5 +45,7 @@ export interface IGitData {
   received_events_url: string,
   type: string,
   site_admin: boolean,
-  score: number
+  score: number,
+  status: string | null,
+  error: string | null
 }
